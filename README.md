@@ -151,6 +151,6 @@ MIT License - see [LICENSE](LICENSE) for details.
 
 ---
 
-**Made with 💜 by developers, for developers**
+**Made with 💜🎧 by Abbas, for developers**
 
 *Stay in the zone, code with vibes!*

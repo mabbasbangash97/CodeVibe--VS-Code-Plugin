@@ -2,8 +2,8 @@
   "name": "codevibe",
   "displayName": "CodeVibe",
   "description": "Adapt your VS Code environment based on your mood with dynamic themes, ambient sounds, animations, and streak tracking",
-  "version": "1.0.0",
-  "publisher": "codevibe",
+  "version": "1.0.1",
+  "publisher": "MuhammadAbbasBangash",
   "engines": {
     "vscode": "^1.85.0"
   },
