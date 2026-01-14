@@ -1,0 +1,184 @@
+{
+  "name": "codevibe",
+  "displayName": "CodeVibe",
+  "description": "Adapt your VS Code environment based on your mood with dynamic themes, ambient sounds, animations, and streak tracking",
+  "version": "1.0.0",
+  "publisher": "codevibe",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Themes",
+    "Other"
+  ],
+  "keywords": [
+    "mood",
+    "theme",
+    "ambient",
+    "sounds",
+    "productivity",
+    "focus",
+    "streak",
+    "wellness"
+  ],
+  "icon": "media/icon.png",
+  "galleryBanner": {
+    "color": "#1e1e2e",
+    "theme": "dark"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/codevibe/codevibe-vscode"
+  },
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "codevibe-sidebar",
+          "title": "CodeVibe",
+          "icon": "media/icons/codevibe.svg"
+        }
+      ]
+    },
+    "views": {
+      "codevibe-sidebar": [
+        {
+          "type": "webview",
+          "id": "codevibe.moodPanel",
+          "name": "Mood & Streak"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "codevibe.setMood",
+        "title": "CodeVibe: Set Mood"
+      },
+      {
+        "command": "codevibe.openSettings",
+        "title": "CodeVibe: Open Settings"
+      },
+      {
+        "command": "codevibe.toggleSound",
+        "title": "CodeVibe: Toggle Sound"
+      },
+      {
+        "command": "codevibe.showStreak",
+        "title": "CodeVibe: Show Streak"
+      }
+    ],
+    "configuration": {
+      "title": "CodeVibe",
+      "properties": {
+        "codevibe.moods.focused.theme": {
+          "type": "string",
+          "default": "One Dark Pro",
+          "description": "Theme for Focused mood"
+        },
+        "codevibe.moods.relaxed.theme": {
+          "type": "string",
+          "default": "Dracula Soft",
+          "description": "Theme for Relaxed mood"
+        },
+        "codevibe.moods.energized.theme": {
+          "type": "string",
+          "default": "Synthwave '84",
+          "description": "Theme for Energized mood"
+        },
+        "codevibe.moods.creative.theme": {
+          "type": "string",
+          "default": "Night Owl",
+          "description": "Theme for Creative mood"
+        },
+        "codevibe.moods.notFeelingIt.theme": {
+          "type": "string",
+          "default": "Nord",
+          "description": "Theme for Not Feeling It mood"
+        },
+        "codevibe.moods.focused.sound": {
+          "type": "string",
+          "default": "bundled:focused",
+          "description": "Sound for Focused mood (bundled:name or path to file or stream:url)"
+        },
+        "codevibe.moods.relaxed.sound": {
+          "type": "string",
+          "default": "bundled:relaxed",
+          "description": "Sound for Relaxed mood"
+        },
+        "codevibe.moods.energized.sound": {
+          "type": "string",
+          "default": "bundled:energized",
+          "description": "Sound for Energized mood"
+        },
+        "codevibe.moods.creative.sound": {
+          "type": "string",
+          "default": "bundled:creative",
+          "description": "Sound for Creative mood"
+        },
+        "codevibe.moods.notFeelingIt.sound": {
+          "type": "string",
+          "default": "bundled:notfeelingit",
+          "description": "Sound for Not Feeling It mood"
+        },
+        "codevibe.sounds.volume": {
+          "type": "number",
+          "default": 50,
+          "minimum": 0,
+          "maximum": 100,
+          "description": "Volume for ambient sounds (0-100)"
+        },
+        "codevibe.sounds.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable ambient sounds"
+        },
+        "codevibe.sounds.streamingEnabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable streaming sounds from online sources (Freesound API)"
+        },
+        "codevibe.animations.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable mood animations"
+        },
+        "codevibe.streak.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable streak tracking"
+        },
+        "codevibe.streak.minCharsForActivity": {
+          "type": "number",
+          "default": 10,
+          "description": "Minimum characters typed to count as coding activity"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run build",
+    "build": "node esbuild.js --production",
+    "watch": "node esbuild.js --watch",
+    "test": "node ./dist/test/runTest.js",
+    "lint": "eslint src --ext ts",
+    "package": "vsce package"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "@types/vscode": "^1.85.0",
+    "@typescript-eslint/eslint-plugin": "^6.13.0",
+    "@typescript-eslint/parser": "^6.13.0",
+    "@vscode/test-electron": "^2.3.8",
+    "@vscode/vsce": "^2.22.0",
+    "esbuild": "^0.19.8",
+    "eslint": "^8.54.0",
+    "typescript": "^5.3.2"
+  },
+  "dependencies": {
+    "howler": "^2.2.4"
+  }
+}
