@@ -114,7 +114,7 @@ You can customize sounds by providing file paths in settings.
 
 ```bash
 # Clone the repository
-git clone https://github.com/codevibe/codevibe-vscode.git
+git clone https://github.com/mabbasbangash97/CodeVibe--VS-Code-Plugin.git
 cd codevibe-vscode
 
 # Install dependencies

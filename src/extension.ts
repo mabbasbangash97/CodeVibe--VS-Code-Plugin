@@ -144,7 +144,7 @@ function showWelcomeMessage(): void {
         if (selection === 'Open Sidebar') {
             vscode.commands.executeCommand('codevibe.moodPanel.focus');
         } else if (selection === 'Learn More') {
-            vscode.env.openExternal(vscode.Uri.parse('https://github.com/codevibe/codevibe-vscode'));
+            vscode.env.openExternal(vscode.Uri.parse('https://github.com/mabbasbangash97/CodeVibe--VS-Code-Plugin'));
         }
     });
 }
